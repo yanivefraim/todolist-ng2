@@ -1,5 +1,14 @@
-import {bootstrap} from 'angular2/platform/browser';
-import {TodoNg2App} from './app/todo-ng2';
 
+import {Component} from 'angular2/core';
+import {bootstrap} from "angular2/platform/browser";
 
-bootstrap(TodoNg2App);
+@Component({
+  selector: 'todo-app',
+  template: `{{message}}`
+})
+
+class TodoApp {
+  message = 'hello world';
+}
+
+bootstrap(TodoApp);
