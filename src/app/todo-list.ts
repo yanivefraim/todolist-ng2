@@ -1,13 +1,16 @@
-import { Component, Input } from 'angular2/core';
-
+import { Component } from 'angular2/core';
+import {TodoService} from './todo-service';
 
 @Component({
   selector: 'todo-list',
   template: `
-      <div>{{todos | json}}</div>
+      <div>{{todoService.todos | json}}</div>
   `
 })
 
 export class TodoList {
-  @Input() todos;
+
+  constructor(public todoService: TodoService) {
+
+  }
 }

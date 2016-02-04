@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from 'angular2/core';
+import { Component } from 'angular2/core';
+import {TodoService} from './todo-service';
 
 @Component({
   selector: 'todo-input',
@@ -11,9 +12,12 @@ import { Component, EventEmitter, Output } from 'angular2/core';
 export default class TodoInput {
 
   currentItem = '';
-  @Output() onAdd = new EventEmitter();
+  constructor(public todoService: TodoService) {
+
+  }
+
   add() {
-    this.onAdd.emit(this.currentItem);
+    this.todoService.addItem(this.currentItem);
     this.currentItem = '';
   }
 }
