@@ -5,7 +5,7 @@ import { Component } from 'angular2/core';
 @Component({
   selector: 'todo-app',
   template: `
-      <todo-input></todo-input>
+      <todo-input (onAdd) = addItem($event)></todo-input>
       <div>{{message}}</div>
   `,
   directives: [TodoInput]
@@ -13,4 +13,8 @@ import { Component } from 'angular2/core';
 
 export class TodoApp {
   message = 'hello world';
+
+  addItem(text) {
+    this.message = text;
+  }
 }

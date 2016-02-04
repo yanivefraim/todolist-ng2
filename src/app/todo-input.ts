@@ -1,17 +1,17 @@
-import { Component } from 'angular2/core';
+import { Component, EventEmitter, Output } from 'angular2/core';
 
 @Component({
   selector: 'todo-input',
   template: `
     <input #newItem>
-    <button (contextmenu)="add(newItem.value, $event)">add</button>
+    <button (click)="add(newItem.value, $event)">add</button>
   `
 })
 
 export default class TodoInput {
   //
-  add(value, e) {
-    e.preventDefault();
-    console.log(value);
+  @Output() onAdd = new EventEmitter();
+  add(value) {
+    this.onAdd.emit(value);
   }
 }
