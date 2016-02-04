@@ -12,7 +12,7 @@ export default class TodoInput {
 
   currentItem = '';
   @Output() onAdd = new EventEmitter();
-  add(value) {
+  add() {
     this.onAdd.emit(this.currentItem);
     this.currentItem = '';
   }
