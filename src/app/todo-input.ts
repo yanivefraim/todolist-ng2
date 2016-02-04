@@ -10,9 +10,10 @@ import { Component, EventEmitter, Output } from 'angular2/core';
 
 export default class TodoInput {
 
-  currentItem = '123';
+  currentItem = '';
   @Output() onAdd = new EventEmitter();
   add(value) {
     this.onAdd.emit(value);
+    this.currentItem = '';
   }
 }
