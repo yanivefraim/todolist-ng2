@@ -6,15 +6,15 @@ import { Component } from 'angular2/core';
   selector: 'todo-app',
   template: `
       <todo-input (onAdd) = addItem($event)></todo-input>
-      <div>{{message}}</div>
+      <div>{{todos | json}}</div>
   `,
   directives: [TodoInput]
 })
 
 export class TodoApp {
-  message = 'hello world';
+  todos = ['hello world'];
 
   addItem(text) {
-    this.message = text;
+    this.todos.push(text);
   }
 }
