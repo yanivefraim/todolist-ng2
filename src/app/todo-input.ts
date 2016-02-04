@@ -4,7 +4,7 @@ import { Component } from 'angular2/core';
   selector: 'todo-input',
   template: `
     <input #newItem>
-    <button (click)="add(newItem.value)">add</button>
+    <button (contextmenu)="add(newItem.value)">add</button>
   `
 })
 
