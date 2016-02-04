@@ -1,4 +1,5 @@
 import TodoInput from './todo-input';
+import {TodoList} from './todo-list';
 import { Component } from 'angular2/core';
 
 
@@ -6,9 +7,9 @@ import { Component } from 'angular2/core';
   selector: 'todo-app',
   template: `
       <todo-input (onAdd) = addItem($event)></todo-input>
-      <div>{{todos | json}}</div>
+      <todo-list [todos]="todos"></todo-list>
   `,
-  directives: [TodoInput]
+  directives: [TodoInput, TodoList]
 })
 
 export class TodoApp {
