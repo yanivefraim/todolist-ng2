@@ -1,4 +1,4 @@
-import { Component } from 'angular2/core';
+import { Component, ViewEncapsulation } from 'angular2/core';
 import {TodoService} from './todo-service';
 
 @Component({
@@ -12,7 +12,8 @@ import {TodoService} from './todo-service';
     <ul>
       <li *ngFor="#todo of todoService.todos" [ngClass]="{completed: todo.completed}">{{todo.text}}</li>
     </ul>
-  `
+  `,
+  encapsulation: ViewEncapsulation.None
 })
 
 export class TodoList {
