@@ -4,8 +4,13 @@ import {TodoService} from './todo-service';
 @Component({
   selector: 'todo-list',
   template: `
+    <style>
+      .completed {
+        color: green;
+      }
+    </style>
     <ul>
-      <li *ngFor="#todo of todoService.todos" [hidden]="!todo.completed">{{todo.text}}</li>
+      <li *ngFor="#todo of todoService.todos" [ngClass]="{completed: todo.completed}">{{todo.text}}</li>
     </ul>
   `
 })
