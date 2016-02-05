@@ -1,4 +1,4 @@
-import { Component, Inject } from 'angular2/core';
+import { Component } from 'angular2/core';
 import {TodoService} from './todo-service';
 
 @Component({
@@ -10,7 +10,7 @@ import {TodoService} from './todo-service';
 
 export class TodoList {
 
-  constructor(@Inject(TodoService) public todoService, @Inject('theAnswer') answer) {
-    console.log(answer);
+  constructor(public todoService: TodoService) {
+
   }
 }
