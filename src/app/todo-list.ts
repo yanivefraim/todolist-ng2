@@ -4,7 +4,9 @@ import {TodoService} from './todo-service';
 @Component({
   selector: 'todo-list',
   template: `
-      <div>{{todoService.todos | json}}</div>
+    <ul>
+      <li *ngFor="#todo of todoService.todos">{{todo.text}}</li>
+    </ul>
   `
 })
 
